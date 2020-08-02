@@ -8,19 +8,23 @@
   <style>
   .navbar {
     display: block;
-    border: solid;
-    background: black;
+    background: linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.5));
     overflow: hidden;
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
-    height: 6vh;
+    height: 4vh;
 }
+
+ .navlink {
+   text-decoration: none;
+
+ }
 
     html {
       box-sizing: border-box;
-      background: #ffc600;
+      background: rgb(0, 0, 0);
       font-family: 'helvetica neue';
       font-size: 20px;
       font-weight: 200;
@@ -114,23 +118,30 @@
 
 <header class="navbar">
 
+  <a class = "navlink" href = "#">Home</a>
+  <a class = "navlink" href = "#">Portfolio</a>
+  <a class = "navlink" href = "#">About</a>
+  <a class = "navlink" href = "#">Connect</a>
+
+
+
 </header>
 
   <div class="panels">
     <div class="panel panel1">
       <p>Coding</p>
       <p>Portfolio</p>
-      <p> <a href = "#"> View Projects! </a> </p>
+      <p> <a class = "reglink" href = "#"> View Projects! </a> </p>
     </div>
     <div class="panel panel2">
       <p>Marissa Bellusci</p>
       <p>About</p>
-      <p> <a href = "#"> Read Bio! </a></p>
+      <p> <a class = "reglink" href = "#"> Read Bio! </a></p>
     </div>
     <div class="panel panel3">
       <p>Let's</p>
       <p>Connect</p>
-      <p> <a href ="#"> Go to Socials! </a> </p>
+      <p> <a class = "reglink" href ="#"> Go to Socials! </a> </p>
     </div>
   </div>
 
@@ -152,7 +163,7 @@
       panels.forEach(panel => panel.addEventListener('click',toggleOpen));
       panels.forEach(panel => panel.addEventListener('transitionend',toggleActive));
   
-    const triggers = document.querySelectorAll('a');
+    const triggers = document.querySelectorAll('.reglink');
 
 
     function highlightLink(){
