@@ -54,8 +54,6 @@
     .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
     .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
     .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
-    .panel4 { background-image:url(https://source.unsplash.com/ITjiVXcwVng/1500x1500); }
-    .panel5 { background-image:url(https://source.unsplash.com/3MNzGlQM7qs/1500x1500); }
 
     /* Flex Items */
     .panel > * { /* the '>' selects the direct descendants of .panel and the '*' selects ALL of them */
@@ -87,12 +85,18 @@
     .panel.open {
       font-size: 40px;
       flex: 3; /* when open a panel will take up 5x the amt of room as the others*/
+    
     }
     
+
     a {
        color: white; 
-       text-decoration: underline;
+       padding-left: 15px;
+       padding-right: 15px;
+       border-radius: 25px;
     }
+
+
 
   </style>
 
@@ -101,23 +105,17 @@
     <div class="panel panel1">
       <p>Coding</p>
       <p>Portfolio</p>
-      <p>(
-          <a href = "#">View Projects!</a>
-        )</p>
+      <p> <a href = "#"> View Projects! </a> </p>
     </div>
     <div class="panel panel2">
       <p>Marissa Bellusci</p>
       <p>About</p>
-      <p>(
-          <a href = "#">Read Bio!</a>
-        )</p>
+      <p> <a href = "#"> Read Bio! </a></p>
     </div>
     <div class="panel panel3">
       <p>Let's</p>
       <p>Connect</p>
-      <p>(
-          <a href ="#">Go to Socials!</a>
-        )</p>
+      <p> <a href ="#"> Go to Socials! </a> </p>
     </div>
   </div>
 
@@ -138,6 +136,31 @@
 
       panels.forEach(panel => panel.addEventListener('click',toggleOpen));
       panels.forEach(panel => panel.addEventListener('transitionend',toggleActive));
+  
+    const triggers = document.querySelectorAll('a');
+
+
+    function highlightLink(){
+        this.style.color = 'white';
+        this.style.background = `linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5))`;
+        this.style.textDecoration = 'none';
+        this.style.textShadow = '0 0 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
+        this.style.boxShadow = '0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)';
+    }
+
+    function unHighlightLink(){
+      this.style.color = 'white';
+      this.style.background = 'none';
+      this.style.textDecoration = 'underline';
+      this.style.textShadow = '0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)';
+      this.style.boxShadow = 'none';
+    }
+
+    triggers.forEach(a => a.addEventListener('mouseenter',highlightLink));
+
+    triggers.forEach(a => a.addEventListener('mouseleave',unHighlightLink));
+
+
   </script>
 
 
