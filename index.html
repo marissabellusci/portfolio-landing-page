@@ -178,8 +178,9 @@
         this.style.color = 'white';
         this.style.background = `linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5))`;
         this.style.textDecoration = 'none';
-        this.style.textShadow = '5px 5px 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
-        this.style.boxShadow = '0 0 4px rgba(0, 0, 0, 0.72), -2px -2px 14px rgba(0, 0, 0, 0.45)';
+        this.style.textShadow = '-2px -2px 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
+        this.style.boxShadow = '0 0 4px rgba(255, 255, 255, 0.2), 0 0 14px rgba(0, 0, 0, 0.45)';
+        this.style.transform = 'translate(.5px, .5px)';
     }
 
     function unHighlightLink(){
@@ -188,7 +189,9 @@
         this.style.textDecoration = 'none';
         this.style.textShadow = '0 0 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
         this.style.boxShadow = '0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)';
+        this.style.transform = 'translate(-.5px, -.5px)';
     }
+
 
     triggers.forEach(a => a.addEventListener('mouseenter',highlightLink));
 
