@@ -105,11 +105,19 @@
     }
     
 
-    a {
+    a{
        color: white; 
        padding-left: 15px;
        padding-right: 15px;
        border-radius: 25px;
+    }
+
+    .reglink {
+      color: 'white';
+      background: linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5));
+      text-decoration: none;
+      text-shadow: 0 0 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1);
+      box-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
     }
 
 
@@ -170,16 +178,16 @@
         this.style.color = 'white';
         this.style.background = `linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5))`;
         this.style.textDecoration = 'none';
-        this.style.textShadow = '0 0 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
-        this.style.boxShadow = '0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)';
+        this.style.textShadow = '5px 5px 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
+        this.style.boxShadow = '0 0 4px rgba(0, 0, 0, 0.72), -2px -2px 14px rgba(0, 0, 0, 0.45)';
     }
 
     function unHighlightLink(){
-      this.style.color = 'white';
-      this.style.background = 'none';
-      this.style.textDecoration = 'underline';
-      this.style.textShadow = '0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)';
-      this.style.boxShadow = 'none';
+        this.style.color = 'white';
+        this.style.background = `linear-gradient(rgba(153, 153, 153, 1),rgba(153, 153, 153, .5))`;
+        this.style.textDecoration = 'none';
+        this.style.textShadow = '0 0 14px rgba(0, 0, 0, 1), 0 0 14px rgba(0, 0, 0, 1)';
+        this.style.boxShadow = '0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45)';
     }
 
     triggers.forEach(a => a.addEventListener('mouseenter',highlightLink));
