@@ -67,11 +67,11 @@
       flex-direction: column;
     }
 
-    .panel1 { background-image:url(https://source.unsplash.com/gYl-UtwNg_I/1500x1500); }
+    .panel1 { background-image:url(laptop.jpg); }
     .panel2 { background-image:url(https://source.unsplash.com/rFKUFzjPYiQ/1500x1500); }
-    .panel3 { background-image:url(https://images.unsplash.com/photo-1465188162913-8fb5709d6d57?ixlib=rb-0.3.5&q=80&fm=jpg&crop=faces&cs=tinysrgb&w=1500&h=1500&fit=crop&s=967e8a713a4e395260793fc8c802901d); }
+    .panel3 { background-image:url(cafe.jpg); }
 
-    /* Flex Items */
+    /* Flex panels */
     .panel > * { /* the '>' selects the direct descendants of .panel and the '*' selects ALL of them */
       margin: 0;
       width: 100%;
@@ -80,6 +80,15 @@
       display: flex;
       justify-content: center;
       align-items: center;
+    }
+    
+    .paragraph{
+      transition: all 10s;
+      opacity: 0;
+    }
+
+    .paragraph.visible{
+      opacity: 1;
     }
 
     .panel > *:first-child{transform: translateY(-100%); }
@@ -93,7 +102,7 @@
       text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
       font-size: 1.5em;
     }
-    
+
     .panel p:nth-child(2) {
       font-size: 4em;
     }
@@ -104,7 +113,6 @@
     
     }
     
-
     a{
        color: white; 
        padding-left: 15px;
@@ -197,6 +205,13 @@
 
     triggers.forEach(a => a.addEventListener('mouseleave',unHighlightLink));
 
+    const paragraphs = document.querySelectorAll('p');
+
+    function fadeIn(){
+      paragraphs.forEach(paragraph => paragraph.classList.add('visible'));
+    }
+
+    window.addEventListener('load',fadeIn);
 
   </script>
 
